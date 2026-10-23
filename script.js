@@ -24,6 +24,7 @@ function openInvitation() {
   openButton.textContent = "With love, just for you";
 
   window.setTimeout(() => {
+    window.scrollTo(0, 0);
     envelopeScreen.classList.add("dismiss");
     invitationContent.inert = false;
     invitationContent.classList.add("visible");

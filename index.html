@@ -95,14 +95,14 @@
             <div class="event-number">01</div><div class="event-flower" aria-hidden="true">✿</div>
             <p class="event-label">THE COLOURFUL BEGINNING</p><h3>Haldi</h3>
             <p class="event-description">Sunshine, marigolds and a little golden magic.</p>
-            <div class="event-meta"><span>DATE</span><strong>Details to be announced</strong></div>
+            <div class="event-meta"><span>DATE</span><strong>24 November 2026</strong></div>
             <div class="event-meta"><span>TIME</span><strong>To be confirmed</strong></div>
           </article>
           <article class="event-card event-card-featured reveal">
             <div class="event-number">02</div><div class="event-flower" aria-hidden="true">❋</div>
             <p class="event-label">A LITTLE GLAMOUR & HENNA</p><h3>Mehendi</h3>
             <p class="event-description">Intricate henna, happy hearts and festive moments.</p>
-            <div class="event-meta"><span>DATE</span><strong>Details to be announced</strong></div>
+            <div class="event-meta"><span>DATE</span><strong>24 November 2026</strong></div>
             <div class="event-meta"><span>TIME</span><strong>To be confirmed</strong></div>
           </article>
           <article class="event-card reveal">
@@ -141,13 +141,14 @@
         <h2 class="section-title reveal">Will you join us?</h2>
         <p class="section-subtitle reveal">Kindly let us know if you can celebrate with us.</p>
         <form class="rsvp-form reveal" id="rsvpForm">
-          <div class="form-row"><label for="guestName">Your name</label><input id="guestName" name="name" autocomplete="name" required placeholder="Full name"></div>
-          <div class="form-row"><label for="guestEmail">Email or phone (optional)</label><input id="guestEmail" name="contact" autocomplete="email" placeholder="How can we reach you?"></div>
-          <div class="form-row"><label for="attendance">Will you be attending?</label><select id="attendance" name="attendance" required><option value="">Please select</option><option value="Joyfully accepts">Joyfully accepts</option><option value="Regretfully declines">Regretfully declines</option></select></div>
-          <div class="form-row"><label for="guestCount">Number of guests (including you)</label><select id="guestCount" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
-          <div class="form-row"><label for="guestMessage">A note for the couple (optional)</label><textarea id="guestMessage" name="message" rows="3" placeholder="Share your wishes..."></textarea></div>
-          <button class="button button-dark submit-button" type="submit">Send RSVP <span>↗</span></button>
-          <p class="form-status" id="formStatus" role="status">RSVP collection is not connected yet. See README.md to connect Google Sheets.</p>
+          <div class="form-row checkbox-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="attendanceYes" name="attendance" value="Joyfully accepts" required>
+              <span class="checkbox-text">Yes, of course! We'll be there</span>
+            </label>
+          </div>
+          <button class="button button-dark submit-button" type="submit">Send Response <span>↗</span></button>
+          <!-- <p class="form-status" id="formStatus" role="status">RSVP collection is not connected yet. See README.md to connect Google Sheets.</p> -->
         </form>
       </section>
 
@@ -157,7 +158,7 @@
         <p class="footer-names">Shikha Rathaur & Veerpal</p>
         <p class="footer-date">26 NOVEMBER 2026</p>
         <a href="#home" class="back-top">Back to the beginning ↑</a>
-        <p class="copyright">MADE WITH LOVE · 2026</p>
+        <p class="copyright">MADE WITH LOVE BY VAIBHAV · 2026</p>
       </footer>
     </div>
   </main>

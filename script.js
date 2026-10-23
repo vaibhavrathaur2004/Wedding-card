@@ -4,7 +4,7 @@ const CONFIG = {
   weddingDate: "2026-11-26T00:00:00+05:30",
   venueName: "Wedding venue to be announced",
   venueAddress: "Venue address will be added soon.",
-  mapsQuery: "https://maps.app.goo.gl/XRCpP1Ln3TBYd2rG9",
+  mapsQuery: "DIVYANI LAWN, 9FC3+4P2, Pilibhit Bypass Rd, Gardan City, Bareilly, Uttar Pradesh 243006",
   rsvpEndpoint: ""
 };
 

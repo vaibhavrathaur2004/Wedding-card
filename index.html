@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f3ec">
+  <meta name="description" content="A wedding invitation celebrating Shikha Rathaur and Veerpal on 26 November 2026.">
+  <title>Shikha & Veerpal — Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Play wedding music" aria-pressed="false">
+    <span class="music-icon" aria-hidden="true">♫</span><span id="musicLabel">Play music</span>
+  </button>
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="assets/wedding-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <main>
+    <section class="envelope-screen" id="envelopeScreen" aria-label="Open wedding invitation">
+      <div class="envelope-intro">
+        <p class="eyebrow">A celebration of love</p>
+        <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open the wedding invitation">
+          <div class="envelope-back"></div>
+          <div class="letter">
+            <span class="letter-small">Together with our families</span>
+            <span class="letter-monogram">S <i>&</i> V</span>
+            <span class="letter-small">invite you to celebrate</span>
+          </div>
+          <div class="envelope-left"></div>
+          <div class="envelope-right"></div>
+          <div class="envelope-bottom"></div>
+          <div class="envelope-flap"></div>
+          <div class="wax-seal">S<span>&</span>V</div>
+        </div>
+        <p class="envelope-names">Shikha <span>&</span> Veerpal</p>
+        <p class="envelope-date">26 · 11 · 2026</p>
+        <button class="open-button" id="openInvitation" type="button">Open invitation <span aria-hidden="true">↗</span></button>
+        <p class="tiny-note">A little note, sealed with love</p>
+      </div>
+    </section>
+
+    <div class="invitation-content" id="invitationContent" inert>
+      <section class="hero section-pad" id="home">
+        <div class="hero-ornament ornament-left" aria-hidden="true">✳</div>
+        <div class="hero-ornament ornament-right" aria-hidden="true">✳</div>
+        <p class="eyebrow reveal">With joyful hearts and the blessings of our families</p>
+        <p class="hero-kicker reveal">WE ARE GETTING MARRIED</p>
+        <h1 class="couple-names reveal"><span>Shikha</span><em>&</em><span>Veerpal</span></h1>
+        <div class="fine-rule reveal"><span></span><i>✦</i><span></span></div>
+        <p class="hero-copy reveal">Two hearts, two families, one beautiful beginning.</p>
+        <p class="hero-date reveal">THURSDAY <b>·</b> 26 NOVEMBER 2026</p>
+        <a class="text-link reveal" href="#details">Explore the celebration <span>↓</span></a>
+      </section>
+
+      <section class="countdown-section section-pad" aria-labelledby="countdownTitle">
+        <p class="eyebrow reveal">The countdown begins</p>
+        <h2 id="countdownTitle" class="section-title reveal">Until our forever</h2>
+        <div class="countdown reveal" id="countdown" aria-live="polite">
+          <div><strong id="days">—</strong><span>Days</span></div>
+          <i>:</i><div><strong id="hours">—</strong><span>Hours</span></div>
+          <i>:</i><div><strong id="minutes">—</strong><span>Minutes</span></div>
+          <i>:</i><div><strong id="seconds">—</strong><span>Seconds</span></div>
+        </div>
+        <p class="countdown-caption" id="countdownCaption">Counting down to a day filled with love.</p>
+      </section>
+
+      <section class="story section-pad" id="details">
+        <div class="story-image reveal">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" alt="Romantic wedding flowers and elegant wedding details" loading="lazy">
+          <span class="image-stamp">Our<br>beginning</span>
+        </div>
+        <div class="story-copy reveal">
+          <p class="eyebrow">A new chapter</p>
+          <h2 class="section-title">The beginning<br>of always.</h2>
+          <div class="fine-rule left"><span></span><i>✦</i><span></span></div>
+          <p>With the love of our families and the joy of our hearts, we invite you to be part of the beginning of our forever.</p>
+          <p>Your presence will make our celebration even more meaningful. We cannot wait to make beautiful memories with you.</p>
+          <p class="signature">With love, <span>Shikha & Veerpal</span></p>
+        </div>
+      </section>
+
+      <section class="events section-pad" id="events">
+        <p class="eyebrow reveal">Save the celebrations</p>
+        <h2 class="section-title reveal">The wedding festivities</h2>
+        <p class="section-subtitle reveal">Every ritual, every laugh, every memory — made more special with you.</p>
+        <div class="event-grid">
+          <article class="event-card reveal">
+            <div class="event-number">01</div><div class="event-flower" aria-hidden="true">✿</div>
+            <p class="event-label">THE COLOURFUL BEGINNING</p><h3>Haldi</h3>
+            <p class="event-description">Sunshine, marigolds and a little golden magic.</p>
+            <div class="event-meta"><span>DATE</span><strong>Details to be announced</strong></div>
+            <div class="event-meta"><span>TIME</span><strong>To be confirmed</strong></div>
+          </article>
+          <article class="event-card event-card-featured reveal">
+            <div class="event-number">02</div><div class="event-flower" aria-hidden="true">❋</div>
+            <p class="event-label">A LITTLE GLAMOUR & HENNA</p><h3>Mehendi</h3>
+            <p class="event-description">Intricate henna, happy hearts and festive moments.</p>
+            <div class="event-meta"><span>DATE</span><strong>Details to be announced</strong></div>
+            <div class="event-meta"><span>TIME</span><strong>To be confirmed</strong></div>
+          </article>
+          <article class="event-card reveal">
+            <div class="event-number">03</div><div class="event-flower" aria-hidden="true">✾</div>
+            <p class="event-label">THE BIG, BEAUTIFUL YES</p><h3>Wedding</h3>
+            <p class="event-description">Two souls, one promise, a lifetime of love.</p>
+            <div class="event-meta"><span>DATE</span><strong>26 November 2026</strong></div>
+            <div class="event-meta"><span>TIME</span><strong>To be confirmed</strong></div>
+          </article>
+        </div>
+        <p class="details-note">Event timings and locations will be updated here once confirmed.</p>
+      </section>
+
+      <section class="gallery section-pad" id="gallery">
+        <div class="gallery-heading reveal"><div><p class="eyebrow">Little moments, big memories</p><h2 class="section-title">A glimpse of love</h2></div><p>Replace these sample photographs<br>with your favourite memories.</p></div>
+        <div class="gallery-grid">
+          <button class="gallery-photo photo-tall reveal" type="button" data-image="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1800&q=90" aria-label="View wedding couple photograph"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=900&q=85" alt="Couple celebrating their wedding" loading="lazy"><span>01 / A moment to remember</span></button>
+          <button class="gallery-photo reveal" type="button" data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=90" aria-label="View wedding celebration photograph"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85" alt="Romantic wedding celebration" loading="lazy"><span>02 / All the little things</span></button>
+          <button class="gallery-photo reveal" type="button" data-image="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1800&q=90" aria-label="View wedding detail photograph"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=900&q=85" alt="Elegant wedding details" loading="lazy"><span>03 / Forever starts here</span></button>
+        </div>
+      </section>
+
+      <section class="venue section-pad" id="venue">
+        <div class="venue-card reveal">
+          <p class="eyebrow">We saved you a seat</p>
+          <h2 class="section-title">Meet us where<br>the magic happens.</h2>
+          <p class="venue-name" id="venueName">Wedding venue to be announced</p>
+          <p class="venue-address" id="venueAddress">Venue address will be added soon.</p>
+          <a class="button button-dark" id="mapsLink" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Get directions <span>↗</span></a>
+          <p class="venue-note">The venue link will be updated when the location is confirmed.</p>
+        </div>
+      </section>
+
+      <section class="rsvp section-pad" id="rsvp">
+        <p class="eyebrow reveal">Your presence is our present</p>
+        <h2 class="section-title reveal">Will you join us?</h2>
+        <p class="section-subtitle reveal">Kindly let us know if you can celebrate with us.</p>
+        <form class="rsvp-form reveal" id="rsvpForm">
+          <div class="form-row"><label for="guestName">Your name</label><input id="guestName" name="name" autocomplete="name" required placeholder="Full name"></div>
+          <div class="form-row"><label for="guestEmail">Email or phone (optional)</label><input id="guestEmail" name="contact" autocomplete="email" placeholder="How can we reach you?"></div>
+          <div class="form-row"><label for="attendance">Will you be attending?</label><select id="attendance" name="attendance" required><option value="">Please select</option><option value="Joyfully accepts">Joyfully accepts</option><option value="Regretfully declines">Regretfully declines</option></select></div>
+          <div class="form-row"><label for="guestCount">Number of guests (including you)</label><select id="guestCount" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></div>
+          <div class="form-row"><label for="guestMessage">A note for the couple (optional)</label><textarea id="guestMessage" name="message" rows="3" placeholder="Share your wishes..."></textarea></div>
+          <button class="button button-dark submit-button" type="submit">Send RSVP <span>↗</span></button>
+          <p class="form-status" id="formStatus" role="status">RSVP collection is not connected yet. See README.md to connect Google Sheets.</p>
+        </form>
+      </section>
+
+      <footer class="footer section-pad">
+        <div class="footer-monogram">S <i>&</i> V</div>
+        <p class="footer-line">One love. One lifetime. Countless memories.</p>
+        <p class="footer-names">Shikha Rathaur & Veerpal</p>
+        <p class="footer-date">26 NOVEMBER 2026</p>
+        <a href="#home" class="back-top">Back to the beginning ↑</a>
+        <p class="copyright">MADE WITH LOVE · 2026</p>
+      </footer>
+    </div>
+  </main>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close photo">×</button>
+    <img id="lightboxImage" alt="Selected wedding photograph">
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>

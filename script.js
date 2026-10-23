@@ -40,6 +40,10 @@ function openInvitation() {
 }
 
 envelope.addEventListener("click", openInvitation);
+// Whole intro block is tappable on small screens
+$(".envelope-intro").addEventListener("click", (event) => {
+  if (window.matchMedia("(max-width: 760px)").matches && !event.target.closest("button")) openInvitation();
+});
 envelope.addEventListener("keydown", (event) => {
   if (event.key === "Enter" || event.key === " ") {
     event.preventDefault();
@@ -206,15 +210,21 @@ lightbox.addEventListener("click", (event) => {
 // RSVP needs a backend. A Google Apps Script URL can be added to CONFIG.
 const rsvpForm = $("#rsvpForm");
 const formStatus = $("#formStatus");
+const rsvpThanks = $("#rsvpThanks");
+
+function showThankYou() {
+  rsvpForm.hidden = true;
+  rsvpThanks.hidden = false;
+  rsvpThanks.scrollIntoView({ behavior: "smooth", block: "center" });
+}
 
 rsvpForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = Object.fromEntries(new FormData(rsvpForm).entries());
 
+  // No backend connected yet: just show the thank-you message.
   if (!CONFIG.rsvpEndpoint.trim()) {
-    formStatus.textContent =
-      "RSVP is not connected yet. Follow the Google Sheets setup in README.md, then add the Web App URL in script.js.";
-    formStatus.classList.add("status-warning");
+    showThankYou();
     return;
   }
 
@@ -232,16 +242,16 @@ rsvpForm.addEventListener("submit", async (event) => {
       body: new URLSearchParams(data).toString()
     });
 
-    formStatus.textContent =
-      "Thank you! Your RSVP has been sent. We look forward to celebrating with you.";
+    formStatus.textContent = "";
     formStatus.classList.remove("status-warning");
     rsvpForm.reset();
+    showThankYou();
   } catch (error) {
     formStatus.textContent =
       "We couldn't send your RSVP. Please try again or contact the hosts directly.";
     formStatus.classList.add("status-warning");
   } finally {
     submitButton.disabled = false;
-    submitButton.innerHTML = 'Send RSVP <span>↗</span>';
+    submitButton.innerHTML = 'Send Response <span>↗</span>';
   }
 });

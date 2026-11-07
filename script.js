@@ -80,8 +80,11 @@ musicToggle.addEventListener("click", async () => {
       musicLabel.textContent = "Pause music";
     } catch (error) {
       musicLabel.textContent = "Add music file";
-      $("#formStatus").textContent =
-        "Add your licensed MP3 file at assets/wedding-song.mp3, then try the music button again.";
+      const statusEl = $("#formStatus");
+      if (statusEl) {
+        statusEl.textContent =
+          "Add your licensed MP3 file at assets/wedding-song.mp3, then try the music button again.";
+      }
     }
   } else {
     music.pause();
@@ -218,40 +221,43 @@ function showThankYou() {
   rsvpThanks.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
-rsvpForm.addEventListener("submit", async (event) => {
-  event.preventDefault();
-  const data = Object.fromEntries(new FormData(rsvpForm).entries());
+// Only wire up the form if the RSVP section is present (it may be commented out).
+if (rsvpForm) {
+  rsvpForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const data = Object.fromEntries(new FormData(rsvpForm).entries());
 
-  // No backend connected yet: just show the thank-you message.
-  if (!CONFIG.rsvpEndpoint.trim()) {
-    showThankYou();
-    return;
-  }
+    // No backend connected yet: just show the thank-you message.
+    if (!CONFIG.rsvpEndpoint.trim()) {
+      showThankYou();
+      return;
+    }
 
-  const submitButton = rsvpForm.querySelector('button[type="submit"]');
-  submitButton.disabled = true;
-  submitButton.textContent = "Sending…";
+    const submitButton = rsvpForm.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending…";
 
-  try {
-    await fetch(CONFIG.rsvpEndpoint, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
-      },
-      body: new URLSearchParams(data).toString()
-    });
+    try {
+      await fetch(CONFIG.rsvpEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: new URLSearchParams(data).toString()
+      });
 
-    formStatus.textContent = "";
-    formStatus.classList.remove("status-warning");
-    rsvpForm.reset();
-    showThankYou();
-  } catch (error) {
-    formStatus.textContent =
-      "We couldn't send your RSVP. Please try again or contact the hosts directly.";
-    formStatus.classList.add("status-warning");
-  } finally {
-    submitButton.disabled = false;
-    submitButton.innerHTML = 'Send Response <span>↗</span>';
-  }
-});
+      formStatus.textContent = "";
+      formStatus.classList.remove("status-warning");
+      rsvpForm.reset();
+      showThankYou();
+    } catch (error) {
+      formStatus.textContent =
+        "We couldn't send your RSVP. Please try again or contact the hosts directly.";
+      formStatus.classList.add("status-warning");
+    } finally {
+      submitButton.disabled = false;
+      submitButton.innerHTML = 'Send Response <span>↗</span>';
+    }
+  });
+}

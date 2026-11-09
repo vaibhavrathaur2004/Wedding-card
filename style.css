@@ -214,3 +214,16 @@ a { color: inherit; }
   .reveal { opacity: 1; transform: none; }
   .envelope-intro > * { animation: none; }.wax-seal { animation: none; }
 }
+@media (max-width: 767px) {
+    .event-card {
+        display: none;
+    }
+
+    .event-card-wedding {
+        display: block;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+}
